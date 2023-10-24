@@ -1,0 +1,35 @@
+
+*****************************************************************************
+                        Assignment 1 - Milestone 3
+Full Name  : Preet Bhagyesh Patel
+Student ID#: 132603226
+Email      : pbpatel48@myseneca.ca
+Section    : NBB
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+
+1.This milestone required you to create additional functions that were not specified or provided for you. Briefly describe three functions you created and include the purpose and value those functions contributed towards the application. Organize your answer for each function by first including the function prototype (not the definition) followed by your explanation. (Minimum: 300 words)
+
+-I have created 3 additional function which were not specified  they are as follows
+
+1.int availableSlot(struct Date date, struct Time time, struct Appointment* app, int maxAppointments):-
+	The function availableSlot checks if a given date and time slot is available within an array of appointments it iterates through the array of appointments and compares the input date and time with each appointment's date and time if a matching slot is found, it sets a flag indicating availability. The function then returns this flag, indicating whether the specified slot is available (1) or not (0) among the provided appointments.
+
+2.int nextAvailableSlot(struct Appointment* app, int maxAppointments):-
+	The function nextAvailableSlot searches for the next available appointment slot within an array of appointments. It initializes an index i and a flag available it iterates through the appointments while the flag is not set and the index is within the array bounds. it checks if the patient number of the current appointment at index i is less than 1, indicating an available slot. If an available slot is found, the flag is set, and the loop terminates. The function returns the index i, indicating the next available slot's position or the total appointments if no slot is available.
+
+3.int checkValidity(int patientNumber, struct Date date, struct Appointment* app, int maxAppointments):-
+	The function checkValidity examines the validity of a given patients appointment based on their patient number and the specified date within an array of appointments. It initializes an index i and a flag valid It traverses the appointments while the flag is unset and the index is within the array bounds. It compares the patient number and date of the current appointment at index `i` with the input values. If a match is found, the flag is setindicating the appointment's validity, and the loop stops. The function returns the index i - 1, denoting the matching appointment's index if valid, or -1 if no such appointment is found.
+
+2.If you coded your solution correctly, there should be at most only one “scanf” function call in the client.c source code file – explain why the number of scanf function calls were purposely and significantly minimized in this module. (Minimum: 150 words)
+
+-Using scanf less reduces data entering mistakes and guarantees that only valid data is used. It also simplifies the process of checking and dealing with data errors. Instead of having many locations to enter data, we combined them to make the application easier to use. This classification also makes it easy to modify how we gather data if necessary.By using separate functions for different types of data, such as dates and timings, we may better organize the code and avoid duplication. Because all of the data is collected in a few locations, utilizing fewer scanf instructions simplifies the code. This describes how the program works and helps with problem discovery and solutions.
+
+3. In question one above you identified three functions you created. For each function, explain what module you placed it in and why? What factors and considerations contributed towards your decision? (Minimum: 150 words)
+
+-ViewAllAppointments, viewAppointmentSchedule, and addAppointment are the three most significant appointment features. These activities are ideally suited to the appointment management component, which acts as a distinct module for dealing with appointments. These tasks are under the appointment management area since they are all about appointments. This module's viewAllAppointments function displays all appointments.viewAppointmentSchedule facilitates seeing appointments for a certain date as part of appointment management. And addAppointment allows you to create new appointments, which is the appointment module's primary function. This configuration organizes the code. Each component has a specific purpose, making it easy to comprehend. Furthermore, if we need to make changes to our appointments, we know where to look. It adheres to a guideline that groups related items together, making future code maintenance easier. In brief, these functions fit nicely in the appointment management module, which helps to keep the code tidy and simple to work with.
+	
